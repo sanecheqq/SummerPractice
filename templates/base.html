@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--	<link rel="stylesheet" href="../static/style.css" />-->
+	<link rel="stylesheet" href="{% static 'style.css' %}" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.google.com/specimen/Anton#standard-styles" rel="stylesheet"/>
+	<link href="https://fonts.google.com/specimen/Aldrich?query=Aldrich" rel="stylesheet"/>
+   <title>Anigelion</title>
+</head>
+
+
+<body>
+
+<header class="header">
+		<div class="header_inner">
+			<div class="header_brand">
+				<a href="../base.html" class="header_brand_text">Anigelion</a>
+			</div>
+
+			<div class="header_logo">
+				<img src="../static/img/aska3.svg"  class =" logo_cover"  alt="">
+			</div>
+
+			<div class="header_nav">
+				<div class="dropdown">
+					<div class="link">
+						<a class="header_nav_link_text" href="categories.html">Аниме</a>
+					</div>
+					<div class="dropdown-content">
+						<a href="#">Фантастика</a>
+						<a href="#">Автобиография</a>
+						<a href="#">Аниме</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<div class="link">
+						<a class="header_nav_link_text" href="categories.html">Сериалы</a>
+					</div>
+					<div class="dropdown-content">
+						<a href="#">Фантастика</a>
+						<a href="#">Автобиография</a>
+						<a href="#">Аниме</a>
+					</div>
+				</div>
+
+				<div class="dropdown">
+					<div class="link">
+						<a class="header_nav_link_text" href="categories.html">Фильмы</a>
+					</div>
+					<div class="dropdown-content">
+						<a href="#">Фантастика</a>
+						<a href="#">Автобиография</a>
+						<a href="#">Аниме</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header_search">
+				<form>
+				  <input type="text"  placeholder="Искать здесь...">
+				</form>
+			</div>
+
+		</div>
+	</header>
+
+	<div class="container_movies">
+		<div class="movies">
+			{% block main %}
+			{% endblock %}
+		</div>
+	</div>
+
+</body>
+</html>

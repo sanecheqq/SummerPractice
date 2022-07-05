@@ -1,0 +1,268 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+    /* font-family: "Anton", sans-serif; */
+    font-family: "Open Sans", sans-serif;
+
+    background-image: url(img/red_fon.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ====HEADER==== */
+
+.header {
+    width: 100%;
+    height: 80px;
+
+
+
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(0deg, rgb(2 1 1 / 0%) 0%, rgb(11 6 42) 100%);
+
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header_inner {
+    padding: 0 10%;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+.header_brand {
+    margin: auto 0;
+}
+
+.header_brand_text {
+    /* font-family: "Aldrich", sans-serif; */
+    text-align: center;
+    font-size: 40px;
+	text-decoration: none;
+	color: #fff;
+
+	font-weight: bold;
+	transition: color 0.2s linear;
+}
+
+.header_brand_text:hover {
+	color: #ff4343;
+}
+
+.header_logo {
+
+    margin: auto 0;
+    justify-self: left;
+}
+
+.logo_cover {
+    width: 60px;
+    height: 60px;
+}
+
+.header_nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin:auto;
+
+}
+
+.link {
+    display: inline-block;
+
+}
+
+.header_nav_link_text {
+    font-family: "Anton", sans-serif;
+    color:#fff;
+    font-weight: 500;
+	font-size: 20px;
+	text-decoration: none;
+	transition: color 0.2s linear;
+    letter-spacing: 1px;
+}
+
+.header_nav_link_text:hover {
+	color: #ff4343;
+}
+
+
+.header_search {
+    width: 250px;
+    display: inline-block;
+    margin: auto 0;
+}
+.header_search:after {content:""; clear:both; display:table}
+.header_search form {
+    width: auto;
+    float: right;
+}
+.header_search input {
+    width: 150px;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    border: 2px solid #000000;
+    background: #F9F0DA;
+    outline: none;
+    transition: .3s linear;
+    }
+.header_search input:focus {
+    width: 250px;
+    border-color: #fff;
+}
+/* ====CONTENT====*/
+
+.container_movies {
+    margin: auto;
+    margin-top: 150px;
+    max-width: 850px;
+    background-color: #462f2fbd;
+
+    border-radius: 15px;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie {
+    width: 240px;
+    margin: 10px;
+    position: relative;
+    right: auto;
+    left: auto;
+}
+
+.movie_cover_inner {
+    position: relative;
+    height: 360px;
+}
+
+.movie_cover {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.movie_title {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.movie_category {
+    font-style: italic;
+    font-size: 14px;
+    color: #e9de8e;
+}
+.movie_average {
+    position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 0;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #1a191f;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+	justify-content: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+.player_movie {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px;
+}
+
+.player_movie_cover_inner {
+    position: relative;
+    width: 240px;
+    height: 360px;
+}
+
+
+.player_movie_info {
+    display: inline-block;
+    width: 65%;
+
+    margin-left: 40px;
+}
+
+.player_movie_title {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.player_movie_category {
+    margin-top: 20px;
+
+    font-style: italic;
+    font-size: 16px;
+	color: #ffffff;
+}
+
+.movie_description {
+    display: inline-block;
+    width: 80%;
+    margin-top: 20px;
+    color:#fff;
+}
+
+.movie_player_block {
+    display: inline-block;
+    width: 800px;
+   
+    margin-top: 40px;
+}
+
+.myVideo{
+    width: 800px;
+
+}
