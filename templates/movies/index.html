@@ -29,7 +29,7 @@
     <div class="movie_info">
         <div class="movie_title">{{ movie.name }}</div>
         <div class="movie_category">{{ movie.category }}</div>
-        <div class="movie_average movie_average_green">{{ movie.rating }}</div>
+        <div class="movie_average movie_average_green">{{ movie.rating|floatformat:1 }}</div>
     </div>
 </div>
 
