@@ -13,3 +13,4 @@ def player_page(request, kinopoisk_id):
     assert isinstance(kinopoisk_id, object)
     movie = Movie.objects.get(kinopoisk_id=kinopoisk_id)
     return render(request, 'movies/player.html', {'movie': movie})
+
