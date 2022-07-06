@@ -34,19 +34,31 @@
 					<div class="link">
 						<a class="header_nav_link_text" href="categories.html">Сериалы</a>
 					</div>
-
 					<div class="link">
 						<a class="header_nav_link_text" href="categories.html">Фильмы</a>
 					</div>
-			</div>
-			<div class="header_search">
-				<form>
-				  <input type="text"  placeholder="Искать здесь...">
-				</form>
+
 			</div>
 
+			<div id="cover">
+				<form class="d-flex" method=POST action="{% url 'search_movies' %}">
+                    {% csrf_token %}
+				  <div class="tb">
+					<div class="td">
+                        <input class="form-control me-2" type="search" placeholder="Search Venues" aria-label="Search" name="searched">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </div>
+					<div class="td" id="s-cover">
+					  <button type="submit">
+						<div id="s-circle"></div>
+						<span></span>
+					  </button>
+					</div>
+				  </div>
+				</form>
+			  </div>
 		</div>
-	</header>
+</header>
 
 	<div class="container_movies">
 		<div class="movies">
