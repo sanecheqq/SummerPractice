@@ -8,6 +8,7 @@ class Movie(models.Model):
     description = models.TextField(max_length=5000)
     image = models.ImageField(upload_to='movie')
     rating = models.FloatField(null=False)
+    #genre = models.CharField(max_length=250)
     kinopoisk_id = models.IntegerField(null=False)
 
     class Meta:

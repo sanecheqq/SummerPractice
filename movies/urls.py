@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from . import views
-from .views import index_page, player_page, landing_page, all_filter
+from .views import index_page, loginPage, player_page, landing_page, all_filter, search_movies
 
 urlpatterns = [
     path('', landing_page),
@@ -11,4 +11,6 @@ urlpatterns = [
 
     path('search_movies/', views.search_movies, name='search_movies'),
     path('movie/<int:kinopoisk_id>', player_page),
+    path('register/', views.registerPage, name="register"),
+    path('login/', views.loginPage, name="login")
 ]

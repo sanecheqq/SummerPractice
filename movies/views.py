@@ -1,8 +1,11 @@
+from curses.ascii import CR
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Movie
+from .forms import CreateUserForm
 
 
 def landing_page(request):
@@ -37,3 +40,19 @@ def search_movies(request):
 def all_filter(request, category):
    movies = Movie.objects.filter(category = category)
    return render(request, 'movies/movie_list.html', {'movies': movies})
+
+def registerPage(request):
+    form = CreateUserForm()
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+    
+    context = {'form':form}
+    return render(request, 'register.html', context)
+
+def loginPage(request):
+    context = {}
+    return render(request, 'login.html', context)
