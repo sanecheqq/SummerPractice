@@ -37,8 +37,8 @@ def search_movies(request):
                        'venues': venues})
     else:
         return render(request,
-                      'movies/search_movies.html',
-                      {})
+                      'movies/search_movies.html'
+                      )
 
 def all_filter(request, category):
    movies = Movie.objects.filter(category = category)
@@ -75,8 +75,10 @@ def loginPage(request):
     return render(request, 'login.html', context)
 
 def logoutUser(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 def home(request):
     return render(request, 'base.html')
