@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% for movie in movies %}
+
+
+
+<div class="movie">
+    <div class="movie_cover_inner">
+        <a href="movie/{{ movie.kinopoisk_id }}">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+            src="media/{{movie.image}}"
+            class="movie_cover"
+            />
+
+            <script>
+            function bigImg(x) {
+                x.style.transform = 'scale(1.05)';
+                x.style.transition = '0.2';
+            }
+
+            function normalImg(x) {
+                x.style.transform = 'scale(1.0)';
+            }
+            </script>
+        </a>
+    </div>
+    <div class="movie_info">
+        <div class="movie_title">{{ movie.name }}</div>
+        <div class="movie_category">{{ movie.category }}</div>
+        <div class="movie_average movie_average_green">{{ movie.rating|floatformat:1 }}</div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

@@ -19,11 +19,12 @@
 			background-image: url(../static/img/red_fon.jpg);
 		}
         .header {
+            flex: 0 0 auto;
             width: 100%;
             height: 80px;
-            -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(0deg, rgb(2 1 1 / 0%) 0%, rgb(11 6 42) 100%);
+            -webkit-box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+            box-shadow: 0 5px 25px rgb(72 35 35 / 45%);
+            background: linear-gradient(0deg, rgb(2 1 1 / 0%) 0%, rgb(70 31 31) 100%);
             position: fixed;
             top: 0;
             z-index: 100;
@@ -148,7 +149,87 @@
         .conf {
             color:#fff;
         }
+        .footer {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            margin-top: 93px;
+            width: 100%;
+            height: 200px;
 
+            bottom: 0px;
+            background-color: #462f2fbd;
+        }
+
+        .site_info {
+            display: flex;
+            width: 800px;
+            height: 80px;
+            margin-top: 50px;
+            /* margin-left:100px; */
+            
+
+        }
+
+        .info_text {
+            margin-left: 20px;
+            color: #fff;
+        }
+
+        .contacts {
+            width: 275px;
+            margin-top: 50px;
+            /* margin-left: auto;
+            margin-right: 100px; */
+            /* padding-left: 10px; */
+        }
+        .social {
+            display: inline-block;
+            width: auto;
+            margin: 0px 20px 20px 0;
+        }
+
+        .nick_text {
+            color: #fff;
+        }
+
+        .social a {
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin: 0 30px 60px 0px 0;
+            text-align: center;
+            color: #000;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+        }
+        .social a:hover {
+            color: #fff;
+        }
+
+        .social svg {
+            margin-top: 7px;
+            width: 32px;
+            height: 32px;
+        }
+        .telegram a:hover {background: #249bd7;
+        }
+
+        .copyright {
+            width: 210px;
+            position: absolute;
+
+            bottom:8%;
+            left: 50%;
+        }
+
+        .copyright_text {
+            color: #fff;
+            
+        }
 	</style>
 
 </head>
@@ -175,24 +256,26 @@
 					</div>
 
 			</div>
-            <!-- Сука лезет не туда куда нужно бля -->
-			<!-- <div id="cover">
-                <form class="d-flex" method=POST action="{% url 'search_movies' %}">
-                    {% csrf_token %}
-                  <div class="tb">
-                    <div class="td">
-                        <input type="search" placeholder="Поиск..." aria-label="Search" name="searched">
-                    </div>
-                    <div class="td" id="s-cover">
-                      <button  class="btn btn-outline-secondary" type="submit">
-                        <div id="s-circle"></div>
-                        <span></span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div> -->
-		</>
+			<div class="header_search">
+				<div id="cover">
+					<form class="d-flex" method=POST action="{% url 'search_movies' %}">
+						{% csrf_token %}
+					<div class="tb">
+						<div class="td-input">
+							<input type="search" placeholder="Поиск..." aria-label="Search" name="searched">
+							<!-- <button class="btn btn-outline-secondary" type="submit">Search</button> -->
+						</div>
+						<div class="td-icon" id="s-cover">
+						<button class="btn-span" type="submit">
+							<div id="s-circle"></div>
+							<span class="btn-span"></span>
+						</button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
 </header>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -245,7 +328,7 @@
                         <div class="conf">
                             Уже есть аккаунт?
                         </div>
-						<a href="../login/" class="ml-2">Войти</a>
+						<a href="{% url 'login' %}" class="ml-2">Войти</a>
 					</div>
 				</div>
 			</div>
@@ -253,15 +336,56 @@
 	</div>
 	<script>
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Имя пользователя..';
-		form_fields[2].placeholder='Эл. Почта..';
-		form_fields[3].placeholder='Введите пароль...';
-		form_fields[4].placeholder='Повторите пароль...';
+		form_fields[3].placeholder='Имя пользователя..';
+		form_fields[4].placeholder='Эл. Почта..';
+		form_fields[5].placeholder='Введите пароль...';
+		form_fields[6].placeholder='Повторите пароль...';
 
 
 		for (var field in form_fields){
 			form_fields[field].className += ' form-control'
 		}
 	</script>
+    <footer class="footer">
+        <div class="site_info">
+            <div class="header_logo">
+				<img src="../static/img/aska3.svg"  class =" logo_cover"  alt="">
+			</div>
+            <span class="info_text">
+                Anigelion — это крупнейший сервис о кино в рунете. 
+                На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, 
+                узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и 
+                дополнить описание фильмов. Почти все - неправда)
+            </span>
+        </div>
+        <div class="contacts">
+            <div class="social telegram">
+                <a href="https://t.me/fufel0/" target="_blank">
+                    <svg role="img" viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
+                    </svg>
+                </a>
+                <div class="contacts_nickname"><span class="nick_text">@fufel0</span></div>
+            </div>
+            <div class="social telegram">
+                <a href="https://t.me/lunidep/" target="_blank">
+                    <svg role="img" viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
+                    </svg>
+                </a>
+                <div class="contacts_nickname"><span class="nick_text">@Lunidep</span></div>
+            </div>
+            <div class="social telegram">
+                <a href="https://t.me/missclick3/" target="_blank">
+                    <svg role="img" viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
+                    </svg>
+                </a>
+                <div class="contacts_nickname"><span class="nick_text">@missclick3</span></div>
+            </div>
+        </div>
+
+        <div class="copyright"><span class="copyright_text">© 2022 AniМаль4ики team</span></div>
+	</footer>
 </body>
 </html>

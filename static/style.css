@@ -13,8 +13,8 @@ body {
   flex-direction: column;
   height: 100%;
 
-  /* font-family: "Anton", sans-serif; */
-	font-family: "Open Sans", sans-serif;
+  font-family: "Anton", sans-serif;
+	/* font-family: "Open Sans", sans-serif; */
 
 	background-image: url(img/red_fon.jpg);
 	background-size: cover;
@@ -31,7 +31,9 @@ body {
 	height: 80px;
 	-webkit-box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
 	box-shadow: 0 5px 25px rgb(72 35 35 / 45%);
-	background: linear-gradient(0deg, rgb(2 1 1 / 0%) 0%, rgb(70 31 31) 100%);
+	/* background: linear-gradient(0deg, rgb(2 1 1 / 0%) 0%, rgb(70 31 31) 100%);
+	 */
+	background-color: #462f2fbd;
 	position: fixed;
 	top: 0;
 	z-index: 100;
@@ -49,7 +51,7 @@ body {
 }
 
 .header_brand_text {
-	/* font-family: "Aldrich", sans-serif; */
+	font-family: "Aldrich", sans-serif;
 	text-align: center;
 	font-size: 40px;
 	text-decoration: none;
@@ -89,7 +91,7 @@ body {
 	font-family: "Anton", sans-serif;
 	color:#fff;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 23px;
 	text-decoration: none;
 	transition: color 0.2s linear;
 	letter-spacing: 1px;
@@ -145,7 +147,7 @@ button {
 	width: auto;
 	height: 42px;
 	padding: 0px 9px 0px 13px;
-	background-color: #462f2fbd;
+	background-color: #463131;
 	border-radius: 20px;
 }
 
@@ -257,7 +259,7 @@ button span {
 }
 
 .movie_title {
-	margin-top: 6px;
+	margin-top: 11px;
 	font-size: 16px;
 	color: #ffffff;
 }
@@ -341,7 +343,7 @@ button span {
 	position: relative;
 
 	width: 100%;
-	height: 200px;
+	height: 165px;
 
 	bottom: 0px;
 	background-color: #462f2fbd;
@@ -363,7 +365,7 @@ button span {
 }
 
 .contacts {
-	width: 275px;
+	width: 290px;
 	margin-top: 50px;
 	/* margin-left: auto;
 	margin-right: 100px; */
@@ -390,6 +392,7 @@ button span {
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+	transition: color 0.2s linear;
 }
 .social a:hover {
 	color: #fff;
@@ -400,7 +403,7 @@ button span {
 	width: 32px;
 	height: 32px;
 }
-.telegram a:hover {background: #249bd7;
+.telegram a:hover {background: #5d3131;
 }
 
 .copyright {
@@ -414,4 +417,8 @@ button span {
 .copyright_text {
 	color: #fff;
 	
+}
+
+video {
+	width: 810px;
 }

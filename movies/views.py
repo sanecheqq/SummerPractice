@@ -1,8 +1,11 @@
 from curses.ascii import CR
+from email.mime import base
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, logout, login
+from django.contrib import messages
 
 from .models import Movie
 from .forms import CreateUserForm
@@ -49,10 +52,31 @@ def registerPage(request):
 
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Пользователь ' + user + ' был зарегистрирован')
+            return redirect('login')
     
     context = {'form':form}
     return render(request, 'register.html', context)
 
 def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.info(request, 'Имя пользователя или пароль введены неправильно!')
     context = {}
     return render(request, 'login.html', context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
+def home(request):
+    return render(request, 'base.html')
