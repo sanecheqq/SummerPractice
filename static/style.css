@@ -108,7 +108,8 @@ body {
 .header_search {
 	/* display: flex; */
 		margin: auto 0;
-		width: 250px;text-align: right;
+		width: 250px;
+		text-align: right;
 	}
 	
 	.tb {
@@ -147,7 +148,7 @@ body {
 		justify-self: right;
 	
 		right: 0;
-		width: auto;
+		width: 250px;
 		height: 42px;
 		padding: 0px 9px 0px 13px;
 		background-color: #463131;
@@ -405,6 +406,7 @@ body {
 }
 
 .contacts {
+	min-width: 290px;
 	width: 290px;
 	margin-top: 50px;
 	/* margin-left: auto;
@@ -460,7 +462,7 @@ body {
 }
 
 video {
-	width: 810px;
+	width: 765px;
 }
 
 

@@ -10,6 +10,7 @@ class Movie(models.Model):
     rating = models.FloatField(null=False)
     #genre = models.CharField(max_length=250)
     kinopoisk_id = models.IntegerField(null=False)
+    magnet_link = models.CharField(max_length=10000)
 
     class Meta:
         verbose_name = 'фильм'
